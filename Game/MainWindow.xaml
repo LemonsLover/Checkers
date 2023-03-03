@@ -1,0 +1,401 @@
+﻿<Window x:Class="Game.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:Game.UserControls"
+        xmlns:local="clr-namespace:Game"   
+        mc:Ignorable="d"
+        Title="MainWindow" Width="800" Height="816">
+    <Window.Resources>
+        <SolidColorBrush Color="DimGray" x:Key="boardColor"/>
+    </Window.Resources>
+    <Grid x:Name="Grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="30"/>
+        </Grid.ColumnDefinitions>
+        <!-- TOP LETTER ROW -->
+        <Label 
+            Grid.Column="1" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="a"/>
+        <Label 
+            Grid.Column="2" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="b"/>
+        <Label 
+            Grid.Column="3" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="c"/>
+        <Label 
+            Grid.Column="4" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="d"/>
+        <Label 
+            Grid.Column="5" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="e"/>
+        <Label 
+            Grid.Column="6" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="f"/>
+        <Label 
+            Grid.Column="7" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="g"/>
+        <Label 
+            Grid.Column="8" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="h"/>
+        <Label 
+            Grid.Column="9" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="i"/>
+        <Label 
+            Grid.Column="10" Grid.Row="0"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="j"/>
+
+        <!-- BOTTOM LETTER ROW -->
+        <Label 
+            Grid.Column="1" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="a"/>
+        <Label 
+            Grid.Column="2" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="b"/>
+        <Label 
+            Grid.Column="3" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="c"/>
+        <Label 
+            Grid.Column="4" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="d"/>
+        <Label 
+            Grid.Column="5" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="e"/>
+        <Label 
+            Grid.Column="6" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="f"/>
+        <Label 
+            Grid.Column="7" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="g"/>
+        <Label 
+            Grid.Column="8" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="h"/>
+        <Label 
+            Grid.Column="9" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="i"/>
+        <Label 
+            Grid.Column="10" Grid.Row="11"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="j"/>
+
+        <!-- LEFT NUMBER ROW -->
+        <Label 
+            Grid.Column="0" Grid.Row="1"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="10"/>
+        <Label 
+            Grid.Column="0" Grid.Row="2"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="9"/>
+        <Label 
+            Grid.Column="0" Grid.Row="3"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="8"/>
+        <Label 
+            Grid.Column="0" Grid.Row="4"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="7"/>
+        <Label 
+            Grid.Column="0" Grid.Row="5"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="6"/>
+        <Label 
+            Grid.Column="0" Grid.Row="6"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="5"/>
+        <Label 
+            Grid.Column="0" Grid.Row="7"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="4"/>
+        <Label 
+            Grid.Column="0" Grid.Row="8"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="3"/>
+        <Label 
+            Grid.Column="0" Grid.Row="9"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="2"/>
+        <Label 
+            Grid.Column="0" Grid.Row="10"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="1"/>
+
+        <!-- RIGHT NUMBER ROW -->
+        <Label 
+            Grid.Column="11" Grid.Row="1"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="10"/>
+        <Label 
+            Grid.Column="11" Grid.Row="2"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="9"/>
+        <Label 
+            Grid.Column="11" Grid.Row="3"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="8"/>
+        <Label 
+            Grid.Column="11" Grid.Row="4"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="7"/>
+        <Label 
+            Grid.Column="11" Grid.Row="5"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="6"/>
+        <Label 
+            Grid.Column="11" Grid.Row="6"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="5"/>
+        <Label 
+            Grid.Column="11" Grid.Row="7"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="4"/>
+        <Label 
+            Grid.Column="11" Grid.Row="8"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="3"/>
+        <Label 
+            Grid.Column="11" Grid.Row="9"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="2"/>
+        <Label 
+            Grid.Column="11" Grid.Row="10"
+            HorizontalAlignment="Center" VerticalAlignment="Center" 
+            FontSize="16" FontWeight="Bold"
+            Content="1"/>
+
+        <!-- TOP BORDER -->
+        <Border Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="10"
+                BorderBrush="Black" BorderThickness="0 0 0 4" />
+
+        <!-- BOTTOM BORDER -->
+        <Border Grid.Column="1" Grid.Row="11" Grid.ColumnSpan="10"
+                BorderBrush="Black" BorderThickness="0 4 0 0" />
+
+        <!-- LEFT BORDER -->
+        <Border Grid.Column="0" Grid.Row="1" Grid.RowSpan="10"
+                BorderBrush="Black" BorderThickness="0 0 4 0" />
+        <Border Grid.Column="0" Grid.Row="0"
+                BorderBrush="Black" BorderThickness="0 0 4 0"
+                Height="4" VerticalAlignment="Bottom" />
+        <Border Grid.Column="0" Grid.Row="11"
+                BorderBrush="Black" BorderThickness="0 0 4 0" 
+                Height="4" VerticalAlignment="Top" />
+
+        <!-- RIGHT BORDER -->
+        <Border Grid.Column="11" Grid.Row="1" Grid.RowSpan="10"
+                BorderBrush="Black" BorderThickness="4 0 0 0" />
+        <Border Grid.Column="11" Grid.Row="0"
+                BorderBrush="Black" BorderThickness="4 0 0 0"
+                Height="4" VerticalAlignment="Bottom" />
+        <Border Grid.Column="11" Grid.Row="11"
+                BorderBrush="Black" BorderThickness="4 0 0 0" 
+                Height="4" VerticalAlignment="Top" />
+
+        <!-- ROW 10 -->
+        <Rectangle Grid.Column="2" Grid.Row="1" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="4" Grid.Row="1" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="6" Grid.Row="1" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="8" Grid.Row="1" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="10" Grid.Row="1" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 9 -->
+        <Rectangle Grid.Column="1" Grid.Row="2" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="3" Grid.Row="2" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="5" Grid.Row="2" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="7" Grid.Row="2" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="9" Grid.Row="2" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 8 -->
+        <Rectangle Grid.Column="2" Grid.Row="3" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="4" Grid.Row="3" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="6" Grid.Row="3" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="8" Grid.Row="3" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="10" Grid.Row="3" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 7 -->
+        <Rectangle Grid.Column="1" Grid.Row="4" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="3" Grid.Row="4" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="5" Grid.Row="4" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="7" Grid.Row="4" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="9" Grid.Row="4" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 6 -->
+        <Rectangle Grid.Column="2" Grid.Row="5" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="4" Grid.Row="5" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="6" Grid.Row="5" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="8" Grid.Row="5" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="10" Grid.Row="5" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 5 -->
+        <Rectangle Grid.Column="1" Grid.Row="6" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="3" Grid.Row="6" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="5" Grid.Row="6" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="7" Grid.Row="6" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="9" Grid.Row="6" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 4 -->
+        <Rectangle Grid.Column="2" Grid.Row="7" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="4" Grid.Row="7" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="6" Grid.Row="7" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="8" Grid.Row="7" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="10" Grid.Row="7" Fill="{DynamicResource boardColor}"/>
+        
+        <!-- ROW 3 -->
+        <Rectangle Grid.Column="1" Grid.Row="8" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="3" Grid.Row="8" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="5" Grid.Row="8" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="7" Grid.Row="8" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="9" Grid.Row="8" Fill="{DynamicResource boardColor}"/>
+
+        <!-- ROW 2 -->
+        <Rectangle Grid.Column="2" Grid.Row="9" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="4" Grid.Row="9" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="6" Grid.Row="9" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="8" Grid.Row="9" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="10" Grid.Row="9" Fill="{DynamicResource boardColor}"/>
+
+        <!-- ROW 1 -->
+        <Rectangle Grid.Column="1" Grid.Row="10" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="3" Grid.Row="10" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="5" Grid.Row="10" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="7" Grid.Row="10" Fill="{DynamicResource boardColor}"/>
+        <Rectangle Grid.Column="9" Grid.Row="10" Fill="{DynamicResource boardColor}"/>
+
+        <!-- TEXT BOARD-->
+
+        <!-- Black --><!--
+        <uc:CheckerUserControl Grid.Column="10" Grid.Row="1" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="8" Grid.Row="1" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="6" Grid.Row="1" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="4" Grid.Row="1" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="2" Grid.Row="1" Brush="Black"/>
+
+        <uc:CheckerUserControl Grid.Column="9" Grid.Row="2" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="7" Grid.Row="2" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="5" Grid.Row="2" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="3" Grid.Row="2" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="1" Grid.Row="2" Brush="Black"/>
+
+        <uc:CheckerUserControl Grid.Column="10" Grid.Row="3" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="8" Grid.Row="3" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="6" Grid.Row="3" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="4" Grid.Row="3" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="2" Grid.Row="3" Brush="Black"/>
+
+        <uc:CheckerUserControl Grid.Column="9" Grid.Row="4" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="7" Grid.Row="4" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="5" Grid.Row="4" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="3" Grid.Row="4" Brush="Black"/>
+        <uc:CheckerUserControl Grid.Column="1" Grid.Row="4" Brush="Black"/>
+
+        --><!-- White --><!--
+        <uc:CheckerUserControl Grid.Column="9" Grid.Row="10" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="7" Grid.Row="10" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="5" Grid.Row="10" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="3" Grid.Row="10" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="1" Grid.Row="10" Brush="White"/>
+
+        <uc:CheckerUserControl Grid.Column="10" Grid.Row="9" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="8" Grid.Row="9" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="6" Grid.Row="9" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="4" Grid.Row="9" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="2" Grid.Row="9" Brush="White"/>
+
+        <uc:CheckerUserControl Grid.Column="9" Grid.Row="8" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="7" Grid.Row="8" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="5" Grid.Row="8" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="3" Grid.Row="8" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="1" Grid.Row="8" Brush="White"/>
+
+        <uc:CheckerUserControl Grid.Column="10" Grid.Row="7" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="8" Grid.Row="7" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="6" Grid.Row="7" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="4" Grid.Row="7" Brush="White"/>
+        <uc:CheckerUserControl Grid.Column="2" Grid.Row="7" Brush="White"/>-->
+
+    </Grid>
+</Window>

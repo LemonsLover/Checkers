@@ -1,0 +1,24 @@
+﻿<UserControl x:Class="Game.UserControls.CheckerUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Game.UserControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Ellipse Grid.Column="4" Grid.Row="1" 
+                 Width="65" Height="65"
+                 Stroke="{Binding Brush}" StrokeThickness="8" 
+                 HorizontalAlignment="Center" VerticalAlignment="Center">
+        </Ellipse>
+        <Ellipse Grid.Column="4" Grid.Row="1" 
+                 Width="36" Height="36" 
+                 Stroke="{Binding Brush}" StrokeThickness="5"
+                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Ellipse Grid.Column="4" Grid.Row="1"
+                 Width="15" Height="15"
+                 Fill="{Binding Brush}" 
+                 HorizontalAlignment="Center" VerticalAlignment="Center"/>
+    </Grid>
+</UserControl>
