@@ -1,4 +1,4 @@
-﻿using Game.UserControls;
+﻿using Game.View.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Game
+namespace Game.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
