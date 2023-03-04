@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:uc="clr-namespace:Game.View.UserControls"
-        xmlns:local="clr-namespace:Game"   
+        xmlns:local="clr-namespace:Game.View"   
         mc:Ignorable="d"
         Title="MainWindow" Width="800" Height="816">
     <Window.Resources>

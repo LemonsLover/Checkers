@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MvvmCross" Version="9.0.9" />
+    <ProjectReference Include="..\Game.Logic\Game.Logic.csproj" />
   </ItemGroup>
 
 </Project>

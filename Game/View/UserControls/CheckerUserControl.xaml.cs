@@ -1,4 +1,4 @@
-﻿using Game.ViewModel;
+﻿using Game.Logic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
@@ -19,8 +19,11 @@ namespace Game.View.UserControls
         }
         public event PropertyChangedEventHandler? PropertyChanged;
 
+        public Checker Checker { get; set; }
+
         private Brush brush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private Brush initialBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
+
         private bool initialBrushSetted = false;
         public Brush Brush
         {
@@ -36,7 +39,6 @@ namespace Game.View.UserControls
                 OnPropertyChanged(nameof(brush));
             }
         }
-
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
             //Brush = new SolidColorBrush(Color.FromRgb(255, 192, 203));
