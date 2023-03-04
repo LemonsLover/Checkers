@@ -1,2 +1,2 @@
 Сheckers
-![image](https://user-images.githubusercontent.com/72101153/222773732-01b55819-ba7e-4d86-bb5a-f22acadc86a6.png)
+![image](https://user-images.githubusercontent.com/72101153/222860975-bc738d7d-5acd-4652-9d7e-a4017ada10d0.png)
