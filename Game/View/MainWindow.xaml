@@ -6,7 +6,7 @@
         xmlns:uc="clr-namespace:Game.View.UserControls"
         xmlns:local="clr-namespace:Game.View"   
         mc:Ignorable="d"
-        Title="MainWindow" Width="800" Height="816">
+        Title="Checkers by Yehor Ovseiukov" Width="800" Height="816" ResizeMode="NoResize">
     <Window.Resources>
         <SolidColorBrush Color="DimGray" x:Key="boardColor"/>
     </Window.Resources>

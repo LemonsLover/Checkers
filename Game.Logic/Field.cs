@@ -46,14 +46,26 @@
             return amount;
         }
 
-        //public Position[] GetAvailableTurnsFor(Checker checker)
-        //{
-        //    if (CheckersField[checker.Position.X, checker.Position.Y] == null)
-        //        throw new ArgumentException("Chacker doesn't exist on the field.");
+        public List<Position> GetAvailableMovesFor(Checker checker)
+        {
+            if (CheckersField[checker.Position.Row, checker.Position.Col] == null)
+                throw new ArgumentException("Chacker doesn't exist on the field.");
 
-        //    if(checker.Type == CheckerType.White && )
+            var avaliableMoves = new List<Position>();
 
-        //}
+            if (checker.Type == CheckerType.White)
+            {
+                avaliableMoves.Add(new Position(checker.Position.Row + 1, checker.Position.Col + 1));
+                avaliableMoves.Add(new Position(checker.Position.Row + 1, checker.Position.Col - 1));
+            }
+            else
+            {
+                avaliableMoves.Add(new Position(checker.Position.Row - 1, checker.Position.Col - 1));
+                avaliableMoves.Add(new Position(checker.Position.Row - 1, checker.Position.Col + 1));
+            }
+
+            return avaliableMoves.Where(am => am.IsValid() && CheckersField[am.Row, am.Col] == null).ToList();
+        }
 
         public void MoveChecker(Checker checker, int newRow, int newCol)
         {

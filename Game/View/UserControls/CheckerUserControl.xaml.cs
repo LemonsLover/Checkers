@@ -24,10 +24,15 @@ namespace Game.View.UserControls
         private Brush brush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
         private Brush initialBrush = new SolidColorBrush(Color.FromRgb(0, 0, 0));
 
+        private bool isSelected = false;
+
         private bool initialBrushSetted = false;
         public Brush Brush
         {
-            get { return brush; }
+            get 
+            { 
+                return brush;
+            }
             set 
             {          
                 brush = value;
@@ -39,6 +44,22 @@ namespace Game.View.UserControls
                 OnPropertyChanged(nameof(brush));
             }
         }
+
+        public bool IsSelected 
+        { 
+            get 
+            { 
+                return isSelected; 
+            } 
+            set
+            {
+                if (value == false)
+                    Brush = initialBrush;
+                else
+                    Brush = new SolidColorBrush(Color.FromRgb(255, 192, 203));
+                isSelected = true;
+            }
+        }
         private void Grid_MouseMove(object sender, MouseEventArgs e)
         {
             //Brush = new SolidColorBrush(Color.FromRgb(255, 192, 203));
@@ -46,12 +67,14 @@ namespace Game.View.UserControls
 
         private void Grid_MouseEnter(object sender, MouseEventArgs e)
         {
-            Brush = new SolidColorBrush(Color.FromRgb(255, 192, 203));
+            if(!isSelected)
+                Brush = new SolidColorBrush(Color.FromRgb(255, 192, 203));
         }
 
         private void Grid_MouseLeave(object sender, MouseEventArgs e)
         {
-            Brush = initialBrush;
+            if (!isSelected)
+                Brush = initialBrush;
         }
 
         public void OnPropertyChanged([CallerMemberName] string prop = "")

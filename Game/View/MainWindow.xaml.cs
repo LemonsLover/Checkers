@@ -18,18 +18,6 @@ namespace Game.View
     {
 
         Field Field = new Field();
-        //private CheckerType[,] checkers = {
-        //    {CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black},
-        //    {CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None},
-        //    {CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black},
-        //    {CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None, CheckerType.Black, CheckerType.None},
-        //    {CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None},
-        //    {CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None, CheckerType.None},
-        //    {CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White},
-        //    {CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None},
-        //    {CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White},
-        //    {CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None, CheckerType.White, CheckerType.None},
-        //};
         public MainWindow()
         {
             InitializeComponent();
@@ -38,7 +26,8 @@ namespace Game.View
 
         private void UpdateField()
         {
-            ClearField();
+            ClearCheckerField();
+            ClearHighlightField();
             var checkersField = Field.CheckersField;
             for (int x = 0; x < checkersField.GetLength(0); x += 1)
             {
@@ -59,15 +48,7 @@ namespace Game.View
             }
         }
 
-        private void NewChecker_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-            var checker = sender as CheckerUserControl;
-            var random = new Random();
-            Field.MoveChecker(checker.Checker, random.Next(1,10), random.Next(1, 10));
-            UpdateField();
-        }
-
-        private void ClearField()
+        private void ClearCheckerField()
         {
             for (int i = Grid.Children.Count - 1; i >= 0; i -= 1)
             {
@@ -75,6 +56,43 @@ namespace Game.View
                 if (Child is CheckerUserControl)
                     Grid.Children.Remove(Child);
             }
+        }
+
+        private void ClearHighlightField()
+        {
+            for (int i = Grid.Children.Count - 1; i >= 0; i -= 1)
+            {
+                UIElement Child = Grid.Children[i];
+                if (Child is MoveHighlightUserControl)
+                    Grid.Children.Remove(Child);
+            }
+
+            foreach(var checker in Grid.Children.OfType<CheckerUserControl>())
+                checker.IsSelected = false;
+        }
+
+        private void NewChecker_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ClearHighlightField();
+            var checker = sender as CheckerUserControl;
+            checker.IsSelected = true;
+            var availableMoves = Field.GetAvailableMovesFor(checker.Checker);
+            foreach(var move in availableMoves)
+            {
+                var highlight = new MoveHighlightUserControl(move, checker.Checker);
+                highlight.MouseLeftButtonDown += Highlight_MouseLeftButtonDown;
+                Grid.Children.Add(highlight);
+                Grid.SetRow(highlight, move.Row + 1);
+                Grid.SetColumn(highlight, move.Col + 1);
+            }
+        }
+
+        private void Highlight_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            var highlight = sender as MoveHighlightUserControl;
+
+            Field.MoveChecker(highlight.RelatedChecker, highlight.Position.Row, highlight.Position.Col);
+            UpdateField();
         }
     }
 }
