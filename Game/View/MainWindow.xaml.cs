@@ -1,8 +1,10 @@
 ﻿using Game.Logic;
+using Game.Utils;
 using Game.View.UserControls;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Media;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -74,6 +76,7 @@ namespace Game.View
         private void NewChecker_MouseDown(object sender, MouseButtonEventArgs e)
         {
             ClearHighlightField();
+            AudioPlayer.Play("CheckerSelected");
             var checker = sender as CheckerUserControl;
             checker.IsSelected = true;
             var availableMoves = Field.GetAvailableMovesFor(checker.Checker);
@@ -89,6 +92,7 @@ namespace Game.View
 
         private void Highlight_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
+            AudioPlayer.Play("CheckerMove");
             var highlight = sender as MoveHighlightUserControl;
 
             Field.MoveChecker(highlight.RelatedChecker, highlight.Position.Row, highlight.Position.Col);

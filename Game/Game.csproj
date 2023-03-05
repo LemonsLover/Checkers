@@ -11,4 +11,13 @@
     <ProjectReference Include="..\Game.Logic\Game.Logic.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Resources\Audio\CheckerMove.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Resources\Audio\CheckerSelected.mp3">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
